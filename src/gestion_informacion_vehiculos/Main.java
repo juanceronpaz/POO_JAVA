@@ -1,5 +1,3 @@
-package gestion_informacion_vehiculos;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,32 +32,17 @@ public class Main {
             System.out.println("-----------------------------------");
         }
 
-        ArrayList<Automovil> automoviles = new ArrayList<>();
         for (Vehiculo vehiculo : vehiculosSinDuplicados) {
-            if (vehiculo instanceof Automovil automovil) {
-                automoviles.add(automovil);
+            if(vehiculo.getClass().equals(Automovil.class)){
+                vehiculo.mostrarInformacion();
             }
-        }
-
-        System.out.println("Automoviles:");
-        for (Automovil automovil : automoviles) {
-            automovil.mostrarInformacion();
+            else{
+                vehiculo.mostrarInformacion();
+            }
             System.out.println("-----------------------------------");
         }
 
-        ArrayList<Motocicleta> motocicletas = new ArrayList<>();
-        for (Vehiculo vehiculo : vehiculosSinDuplicados) {
-            if (vehiculo instanceof Motocicleta motocicleta) {
-                motocicletas.add(motocicleta);
-            }
-        }
-
-        System.out.println("Motocicletas:");
-        for (Motocicleta motocicleta : motocicletas) {
-            motocicleta.mostrarInformacion();
-            System.out.println("-----------------------------------");
-        }
-        
+      
         for (Vehiculo vehiculo : vehiculosSinDuplicados) {
             if (vehiculo.getPlaca().equals("STU123")) {
                 vehiculo.propietario = "Cristian";
